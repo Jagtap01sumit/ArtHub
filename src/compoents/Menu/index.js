@@ -12,6 +12,7 @@ import {
 export default function Menu() {
   return (
     <div className={styles.menuContainer}>
+    
       <div className={styles.iconWrapper}>
         <FontAwesomeIcon icon={faPencil} className={styles.icon} />
       </div>
