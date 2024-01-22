@@ -1,7 +1,13 @@
 import React from "react";
 import styles from "./index.module.css";
-import { COLORS } from "@/constants";
+import { COLORS, MENU_ITEMS } from "@/constants";
+import { useSelector } from "react-redux";
 export default function ToolBox(e) {
+  const activeMenuItem = useSelector((state) => state.menu.activeMenuItem);
+  const showStrokeToolOption = activeMenuItem === MENU_ITEMS.PENCIL;
+  const showBrushToolOption =
+    activeMenuItem === MENU_ITEMS.PENCIL ||
+    activeMenuItem === MENU_ITEMS.ERASER;
   const updateBrushSize = (e) => {};
   return (
     <div className={styles.toolboxContainer}>
@@ -18,19 +24,19 @@ export default function ToolBox(e) {
           ></div>
           <div
             className={styles.colorBox}
-            style={{ backgroundColor: COLORS.GREEN}}
+            style={{ backgroundColor: COLORS.GREEN }}
           ></div>
           <div
             className={styles.colorBox}
-            style={{ backgroundColor: COLORS.BLUE}}
+            style={{ backgroundColor: COLORS.BLUE }}
           ></div>
           <div
             className={styles.colorBox}
-            style={{ backgroundColor: COLORS.ORANGE}}
+            style={{ backgroundColor: COLORS.ORANGE }}
           ></div>
           <div
             className={styles.colorBox}
-            style={{ backgroundColor: COLORS.YELLOW}}
+            style={{ backgroundColor: COLORS.YELLOW }}
           ></div>
         </div>
       </div>
